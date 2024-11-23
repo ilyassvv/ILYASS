@@ -40,14 +40,6 @@ badtik = 0
 goodtik = 0
 hits = 0
 
-aa = requests.get('https://pastebin.com/raw/uh7YtXjq').text
-
-if aa == 'ILYAS':
-	pass
-else:
-	print('Stopped')
-	exit()
-
 def info(userr):
 	
 	tiko = InfoTik.TikTok_Info(userr)
