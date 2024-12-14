@@ -755,20 +755,9 @@ elif ethan==3:
 	    return emails
 	
 	def main():
-	    if not os.path.exists('username.txt'):
-	        os.system('clear')
-	        banner()
-	        print(f"{R}𝐆𝐞𝐭 𝐋𝐢𝐬𝐭 𝐅𝐢𝐫𝐬𝐭")
-	        return
 	    
-	    try:
-	        with open('username.txt', 'r') as file:
+	    with open('username.txt', 'r') as file:
 	            users = file.readlines()
-	    except:
-	        os.system('clear')
-	        banner()
-	        print(f"{R}𝐆𝐞𝐭 𝐋𝐢𝐬𝐭 𝐅𝐢𝐫𝐬𝐭")
-	        return
 	    
 	    choice = domain()
 	    
