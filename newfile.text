@@ -23,7 +23,7 @@ def lo(word):
             time.sleep(0.1)
             sys.stdout.flush()
 
-if id not in ae:
+if int(id) not in ae:
 	print('Go subscribe first.')
 	exit()
 else:
